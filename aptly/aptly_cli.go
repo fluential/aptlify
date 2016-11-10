@@ -38,7 +38,7 @@ func cleanSlice(slice []string) []string {
 
 func (a *AptlyCli) GpgAdd(gpg_key string) ([]string, error) {
 
-	out, err := execExec("gpg", "--no-default-keyring", "--keyring", "trustedkeys.gpg", "--keyserver", "keys.gnupg.net", "--recv-keys", gpg_key)
+	out, err := execExec("gpg", "--no-default-keyring", "--keyring", "trustedkeys.gpg", "--keyserver", "hpk://keys.gnupg.net:80", "--recv-keys", gpg_key)
 	return out, err
 }
 
